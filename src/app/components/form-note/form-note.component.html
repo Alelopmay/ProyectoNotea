@@ -1,0 +1,21 @@
+<div class="container border border-secondary p-4 bg-dark text-white">
+    <div class="row justify-content-center">
+        <div class="col-12 col-md-6">
+            <form [formGroup]="form" (ngSubmit)="submit()" class="mt-4">
+                <div class="form-group mb-3">
+                    <label for="title" class="text-white">Título</label>
+                    <input #title type="text" class="form-control" formControlName="title" id="title"
+                        placeholder="Título">
+                </div>
+                <div class="form-group mb-3">
+                    <label for="description" class="text-white">Descripción</label>
+                    <input type="text" class="form-control" formControlName="description" id="description"
+                        placeholder="Descripción">
+                </div>
+                <input type="hidden" formControlName="id">
+                <button type="submit" class="btn btn-primary btn-block"
+                    [disabled]="form.status != 'VALID'">Guardar</button>
+            </form>
+        </div>
+    </div>
+</div>
